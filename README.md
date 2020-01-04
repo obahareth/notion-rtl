@@ -1,4 +1,6 @@
 # notion-rtl
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fflggojmgaedcocmholcdicoedgaabib)
+
 
 ![](.github/screenshots/main.png)
 
