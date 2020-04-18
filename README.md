@@ -7,5 +7,5 @@
 A Chrome extension to enable RTL support in https://notion.so
 
 The extension isn't really doing anything fancy, all it's doing is that it fetches all top-level blocks that
-are direct children of `.notion-page-content` that don't have the `dir` attribute, every 200 milliseconds (this part really needs to be optimized, I made it in a hurry, but check out #2 if you're willing to help) 
+are direct children of `.notion-page-content` that don't have the `dir` attribute, every 200 milliseconds (this part really needs to be optimized, I made it in a hurry, but check out [#2](https://github.com/obahareth/notion-rtl/issues/2) if you're willing to help) 
 then it sets `dir="auto"` on those blocks.
