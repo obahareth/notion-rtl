@@ -18,12 +18,16 @@ function notionPageContentIsLoaded() {
   return false
 }
 
-let pageLoadInterval = setInterval(() => {
-  if (notionPageContentIsLoaded()) {
-    setBlocksDirectionToAuto()
-
-    // TODO: If we can find a cleaner way to handle block additions/removals
-    // then clear out this interval
-    // clearInterval(pageLoadInterval)  
+chrome.storage.sync.get('mode', function (items) {
+  if (items.mode === 'enabled') {
+    let pageLoadInterval = setInterval(() => {
+      if (notionPageContentIsLoaded()) {
+        setBlocksDirectionToAuto()
+    
+        // TODO: If we can find a cleaner way to handle block additions/removals
+        // then clear out this interval
+        // clearInterval(pageLoadInterval)  
+      }
+    }, 200)
   }
-}, 200)
+});

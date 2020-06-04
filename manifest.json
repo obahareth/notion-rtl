@@ -3,7 +3,7 @@
   "version": "1.0",
   "description": "An extension to add RTL support for https://notion.so",
   "manifest_version": 2,
-  "permissions": ["tabs", "*://*.notion.so/*"],
+  "permissions": ["tabs", "*://*.notion.so/*", "storage"],
   "content_scripts": [
     {
       "matches": ["*://*.notion.so/*"],
@@ -16,5 +16,9 @@
     "32": "logo/logo-32.png",
     "48": "logo/logo-48.png",
     "128": "logo/logo-128.png"
+  },
+  "browser_action": {
+    "default_popup": "configs.html",
+    "default_title": "notion rtl"
   }
 }
