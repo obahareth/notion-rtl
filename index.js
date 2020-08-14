@@ -34,7 +34,7 @@ function isNotionPageContentLoaded(node) {
     return node.className === 'notion-page-content'
   }
 
-  return false;
+  return false
 }
 
 function onNotionPageContentChanged() {
