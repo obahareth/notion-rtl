@@ -43,14 +43,17 @@ function onNotionPageContentChanged() {
 }
 
 function onNotionDocumentLoaded(mutationsList) {
-  for (const mutation of mutationsList) {
-    if (isNotionPageContentLoaded(mutation.addedNodes[0])) {
+  for (const { addedNodes } of mutationsList) {
+    // (Fragile!!) Currently for faster retieval of the child nodes we assume
+    // that there's only one child in 0's position, however notion could
+    // change the DOM structure in future so this might break.
+    if (isNotionPageContentLoaded(addedNodes[0])) {
       NOTION_DOCUMENT_OBSERVER.disconnect()
-
-      const $notionPageContent = document.querySelector(`.notion-page-content`)
+  
+      const $notionPageContent = document.getElementsByClassName('notion-page-content')[0]
 
       const pageContentObserver = new MutationObserver(onNotionPageContentChanged)
-      pageContentObserver.observe($notionPageContent, OBSERVER_CONFIG)
+      pageContentObserver.observe($notionPageContent, OBSERVER_CONFIG)  
     }
   }
 }
