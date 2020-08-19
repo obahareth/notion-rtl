@@ -8,15 +8,9 @@ function showAlert(){
 }
 
 function restoreOptions() {
-    chrome.storage.sync.get(
-        'mode',
-        function (items) {
-            if (items.mode === 'enabled') {
-                document.getElementById('toggleBtn').innerText = 'ON';
-            } else {
-                document.getElementById('toggleBtn').innerText = 'OFF';
-            }
-        });
+    chrome.storage.sync.get('mode', function onStorageGet(items) {
+        document.getElementById('toggleBtn').innerText = (items.mode === 'enabled' ? 'ON' : 'OFF');
+    });
 }
 
 function reloadPage(){
