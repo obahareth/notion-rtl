@@ -19,17 +19,10 @@ function reloadPage(){
 }
 
 toggleButton.addEventListener('click', function () {
-    if (this.innerText == 'ON') {
-        this.innerText = 'OFF';
-        chrome.storage.sync.set({
-            'mode': 'disabled'
-        })
-    } else {
-        this.innerText = 'ON';
-        chrome.storage.sync.set({
-            'mode': 'enabled'
-        })
-    }
+    this.innerText = (this.innerText == 'ON' ? 'OFF' : 'ON');
+    chrome.storage.sync.set({
+        'mode': this.innerText == 'OFF' ? 'disabled' : 'enabled'
+    });
     showRefreshNotice();
 })
 
