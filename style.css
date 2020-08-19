@@ -11,7 +11,7 @@ body {
     margin-top: 10%;
 }
 
-#alert {
+#refresh-notice {
     font-weight: 600;
     color: rgb(187, 60, 60);
     animation: fadeInFromNone 0.5s ease-out;

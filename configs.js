@@ -1,10 +1,10 @@
-const alert = document.getElementById('alert');
+const refreshNotice = document.getElementById('refresh-notice');
 const toggleButton = document.getElementById('toggleBtn');
 
-function showAlert(){
-       alert.style.display = 'block'
+function showRefreshNotice(){
+        refreshNotice.style.display = 'block'
     setTimeout(function () {
-        alert.style.display = 'none'
+        refreshNotice.style.display = 'none'
     }, 20000)
 }
 
@@ -30,7 +30,7 @@ toggleButton.addEventListener('click', function () {
             'mode': 'enabled'
         })
     }
-    showAlert();
+    showRefreshNotice();
 })
 
 document.getElementById('reloadBtn').addEventListener('click', reloadPage);
