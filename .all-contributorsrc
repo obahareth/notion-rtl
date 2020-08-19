@@ -1,0 +1,44 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "imhmdb",
+      "name": "Mohamad Bahamdain",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/34659256?v=4",
+      "profile": "https://mhmd.dev",
+      "contributions": [
+        "code",
+        "ideas",
+        "platform"
+      ]
+    },
+    {
+      "login": "dotanrs",
+      "name": "Dotan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9082313?v=4",
+      "profile": "https://github.com/dotanrs",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "EhsanZ",
+      "name": "Ehsan Zumrut",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/7473298?v=4",
+      "profile": "https://e7san.gitbook.io/wiki",
+      "contributions": [
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "notion-rtl",
+  "projectOwner": "obahareth",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
