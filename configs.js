@@ -1,4 +1,5 @@
-let alert = document.getElementById('alert');
+const alert = document.getElementById('alert');
+const toggleButton = document.getElementById('toggleBtn');
 
 function showAlert(){
        alert.style.display = 'block'
@@ -9,7 +10,7 @@ function showAlert(){
 
 function restoreOptions() {
     chrome.storage.sync.get('mode', function onStorageGet(items) {
-        document.getElementById('toggleBtn').innerText = (items.mode === 'enabled' ? 'ON' : 'OFF');
+        toggleButton.innerText = (items.mode === 'enabled' ? 'ON' : 'OFF');
     });
 }
 
@@ -17,7 +18,7 @@ function reloadPage(){
     chrome.tabs.reload();
 }
 
-document.getElementById('toggleBtn').addEventListener('click', function () {
+toggleButton.addEventListener('click', function () {
     if (this.innerText == 'ON') {
         this.innerText = 'OFF';
         chrome.storage.sync.set({
