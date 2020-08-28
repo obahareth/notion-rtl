@@ -13,6 +13,20 @@ The extension isn't really doing anything fancy, all it's doing is that it fetch
 are direct children of `.notion-page-content` that don't have the `dir` attribute, every 200 milliseconds (this part really needs to be optimized, I made it in a hurry, but check out [#2](https://github.com/obahareth/notion-rtl/issues/2) if you're willing to help) 
 then it sets `dir="auto"` on those blocks.
 
+## Desktop App Support
+Check out [Notion Enhancer](https://github.com/dragonwocky/notion-enhancer) for more information on getting this working on the Notion desktop apps.
+
+## Developing
+1. Go to Chrome's [extensions page](chrome://extensions)
+2. Click Load Unpacked
+3. Select this repository's root
+4. Make sure the Chrome Store version of the extension is turned off
+
+Note: You may need to press the reload button on the unpacked version of the extension at times.
+
+## Testing
+We have a set of [public Notion pages](https://www.notion.so/obahareth/Notion-RTL-Tests-8bee4db6585343fc8bae93b791edd726) to check the extension on, we're looking into adding integration testing based on them.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
