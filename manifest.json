@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.notion.so/*"],
-      "js": ["index.js"],
+      "js": ["src/index.js"],
       "run_at": "document_idle"
     }
   ],
