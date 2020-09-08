@@ -36,7 +36,6 @@ function alignPageContentToRight() {
   alignListItemsToRight();
 }
 
-
 // === Main entry point
 
 function onNotionDocumentLoaded(mutationsList) {
@@ -44,7 +43,7 @@ function onNotionDocumentLoaded(mutationsList) {
   MUTATIONS_QUEUE.push(mutationsList);
 }
 
-// Idle observe changes on notion page then align items, reason we're doing that is we shouldn't 
+// Idle observe changes on notion page then align items, reason we're doing that is we shouldn't
 // block any process for the main engine also we don't want to risk the performance when applying
 // our styles on large documents.
 function idleAlginItemsToRight() {
@@ -52,16 +51,17 @@ function idleAlginItemsToRight() {
     for (const {addedNodes} of mutation) {
       if (isNotionPageContentLoaded(addedNodes[0])) {
         alignPageContentToRight();
-
-        const $notionPageContent = document.getElementsByClassName('notion-page-content')[0];
-
-        NOTION_PAGE_CONTENT_MUTATION.disconnect();
-        NOTION_PAGE_CONTENT_MUTATION.observe($notionPageContent, {childList: true, subtree: false});
+        
+        const $notionPageContent = document.getElementsByClassName('notion-page-content')[0] || undefined;
+        if ($notionPageContent) {
+          NOTION_PAGE_CONTENT_MUTATION.disconnect();
+          NOTION_PAGE_CONTENT_MUTATION.observe($notionPageContent, {childList: true, subtree: false});
+        }
       }
     }
   }
 
-  // Clean queue 
+  // Clean queue
   MUTATIONS_QUEUE.splice(0, MUTATIONS_QUEUE.length);
 }
 
