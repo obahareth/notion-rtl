@@ -1,6 +1,6 @@
 # notion-rtl
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fflggojmgaedcocmholcdicoedgaabib)](https://chrome.google.com/webstore/detail/notion-rtl/fflggojmgaedcocmholcdicoedgaabib)
 
@@ -39,6 +39,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://mhmd.dev"><img src="https://avatars3.githubusercontent.com/u/34659256?v=4" width="100px;" alt=""/><br /><sub><b>Mohamad Bahamdain</b></sub></a><br /><a href="https://github.com/obahareth/notion-rtl/commits?author=imhmdb" title="Code">💻</a> <a href="#ideas-imhmdb" title="Ideas, Planning, & Feedback">🤔</a> <a href="#platform-imhmdb" title="Packaging/porting to new platform">📦</a></td>
     <td align="center"><a href="https://github.com/dotanrs"><img src="https://avatars3.githubusercontent.com/u/9082313?v=4" width="100px;" alt=""/><br /><sub><b>Dotan</b></sub></a><br /><a href="https://github.com/obahareth/notion-rtl/commits?author=dotanrs" title="Code">💻</a></td>
     <td align="center"><a href="https://e7san.gitbook.io/wiki"><img src="https://avatars0.githubusercontent.com/u/7473298?v=4" width="100px;" alt=""/><br /><sub><b>Ehsan Zumrut</b></sub></a><br /><a href="https://github.com/obahareth/notion-rtl/pulls?q=is%3Apr+reviewed-by%3AEhsanZ" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/Fahme"><img src="https://avatars3.githubusercontent.com/u/10753722?v=4" width="100px;" alt=""/><br /><sub><b>Fahme Bnchi</b></sub></a><br /><a href="https://github.com/obahareth/notion-rtl/commits?author=Fahme" title="Code">💻</a></td>
   </tr>
 </table>
 
