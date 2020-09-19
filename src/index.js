@@ -16,7 +16,7 @@ function alignListItemsToRight() {
 }
 
 function getListItems() {
-  return document.querySelectorAll("div[placeholder='List']");
+  return document.querySelectorAll("div[placeholder='List'], div[placeholder='To-do']");
 }
 
 function setBlocksDirectionToAuto() {
