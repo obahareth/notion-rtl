@@ -28,7 +28,7 @@ function setBlocksDirectionToAuto() {
 }
 
 function getTopLevelBlocksWithoutDirAttribute() {
-  return document.querySelectorAll('.notion-page-content > div[data-block-id]:not([dir])');
+  return document.querySelectorAll('.notion-page-content > div[data-block-id]:not([dir]), [placeholder="Untitled"]:not([dir])');
 }
 
 function alignPageContentToRight() {
