@@ -2,10 +2,12 @@
 // to observe any newly added blocks under notion-content-page element
 const MUTATIONS_QUEUE = [];
 const NOTION_DOCUMENT_MUTATION = new MutationObserver(onNotionDocumentLoaded);
-NOTION_DOCUMENT_MUTATION.observe(document, {childList: true, subtree: true});
+NOTION_DOCUMENT_MUTATION.observe(document, { childList: true, subtree: true });
 
 // A mutation to observe newest added blocks to notion-content-page element
-const NOTION_PAGE_CONTENT_MUTATION = new MutationObserver(() => alignPageContentToRight());
+const NOTION_PAGE_CONTENT_MUTATION = new MutationObserver(() =>
+  alignPageContentToRight()
+);
 
 function alignListItemsToRight() {
   const items = getListItems();
@@ -16,7 +18,9 @@ function alignListItemsToRight() {
 }
 
 function getListItems() {
-  return document.querySelectorAll("div[placeholder='List'], div[placeholder='To-do']");
+  return document.querySelectorAll(
+    "div[placeholder='List'], div[placeholder='To-do']"
+  );
 }
 
 function setBlocksDirectionToAuto() {
@@ -28,7 +32,11 @@ function setBlocksDirectionToAuto() {
 }
 
 function getTopLevelBlocksWithoutDirAttribute() {
-  return document.querySelectorAll('.notion-page-content > div[data-block-id]:not([dir]), [placeholder="Untitled"]:not([dir])');
+  return document.querySelectorAll(
+    `.notion-page-content > div[data-block-id]:not([dir]):not(.notion-column_list-block),
+    [placeholder="Untitled"]:not([dir]),
+    .notion-column-block > div[data-block-id]:not([dir])`
+  );
 }
 
 function alignPageContentToRight() {
@@ -48,14 +56,19 @@ function onNotionDocumentLoaded(mutationsList) {
 // our styles on large documents.
 function idleAlginItemsToRight() {
   for (const mutation of MUTATIONS_QUEUE) {
-    for (const {addedNodes} of mutation) {
+    for (const { addedNodes } of mutation) {
       if (isNotionPageContentLoaded(addedNodes[0])) {
         alignPageContentToRight();
-        
-        const $notionPageContent = document.getElementsByClassName('notion-page-content')[0] || undefined;
+
+        const $notionPageContent =
+          document.getElementsByClassName('notion-page-content')[0] ||
+          undefined;
         if ($notionPageContent) {
           NOTION_PAGE_CONTENT_MUTATION.disconnect();
-          NOTION_PAGE_CONTENT_MUTATION.observe($notionPageContent, {childList: true, subtree: false});
+          NOTION_PAGE_CONTENT_MUTATION.observe($notionPageContent, {
+            childList: true,
+            subtree: false,
+          });
         }
       }
     }
