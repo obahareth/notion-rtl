@@ -106,3 +106,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Generated Files by Google Chrome
+app.asar
