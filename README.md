@@ -2,8 +2,9 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/fflggojmgaedcocmholcdicoedgaabib)](https://chrome.google.com/webstore/detail/notion-rtl/fflggojmgaedcocmholcdicoedgaabib)
 
+[![Chrome](.github/icons/chrome.png "Chrome")](https://chrome.google.com/webstore/detail/notion-rtl/fflggojmgaedcocmholcdicoedgaabib)
+[![Firefox](.github/icons/firefox.png "Firefox")](https://addons.mozilla.org/en-US/firefox/addon/notion-rtl/)
 
 ![](.github/screenshots/main.png)
 
