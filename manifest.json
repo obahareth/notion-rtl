@@ -3,10 +3,10 @@
   "version": "1.3.0",
   "description": "An extension to add RTL support for https://notion.so",
   "manifest_version": 2,
-  "permissions": ["*://*.notion.so/*"],
+  "permissions": ["*://*.notion.so/*", "*://*.notion.site/*"],
   "content_scripts": [
     {
-      "matches": ["*://*.notion.so/*"],
+      "matches": ["*://*.notion.so/*", "*://*.notion.site/*"],
       "js": ["src/index.js"],
       "run_at": "document_idle"
     }
