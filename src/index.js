@@ -76,7 +76,6 @@ function idleAlginItemsToRight() {
         const $notionPageElem = getNotionPageElem(addedNodes[0])
 
         if ($notionPageElem) {
-          console.log($notionPageElem)
           alignPageContentToRight()
 
           NOTION_PAGE_CONTENT_MUTATION.disconnect()
