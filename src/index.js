@@ -54,19 +54,32 @@ function onNotionDocumentLoaded(mutationsList) {
   MUTATIONS_QUEUE.push(mutationsList)
 }
 
+function getNotionPageElem(node) {
+  if (typeof node !== 'object') return null
+  if (!(node instanceof HTMLElement)) return null
+
+  for (const rootLevelClassName of ROOT_LEVEL_CLASS_NAMES) {
+    const $notionPageElem = node.getElementsByClassName(rootLevelClassName)
+    if ($notionPageElem) return $notionPageElem[0]
+  }
+
+  return null
+}
+
 // Idle observe changes on notion page then align items, reason we're doing that is we shouldn't
 // block any process for the main engine also we don't want to risk the performance when applying
 // our styles on large documents.
 function idleAlginItemsToRight() {
   for (const mutation of MUTATIONS_QUEUE) {
     for (const {addedNodes} of mutation) {
-      if (isNotionPageContentLoaded(addedNodes[0])) {
-        alignPageContentToRight()
+      if (typeof addedNodes[0] !== 'undefined') {
+        const $notionPageElem = getNotionPageElem(addedNodes[0])
 
-        const $notionPageContent = document.getElementsByClassName('notion-page-content')[0] || undefined
-        if ($notionPageContent) {
+        if ($notionPageElem) {
+          alignPageContentToRight()
+
           NOTION_PAGE_CONTENT_MUTATION.disconnect()
-          NOTION_PAGE_CONTENT_MUTATION.observe($notionPageContent, {childList: true, subtree: false})
+          NOTION_PAGE_CONTENT_MUTATION.observe($notionPageElem, {childList: true, subtree: false})
         }
       }
     }
@@ -78,12 +91,4 @@ function idleAlginItemsToRight() {
 
 function isMutationQueueEmpty() {
   return !MUTATIONS_QUEUE.length
-}
-
-function isNotionPageContentLoaded(node) {
-  if (typeof node !== 'undefined') {
-    return ROOT_LEVEL_CLASS_NAMES.includes(node.className)
-  }
-
-  return false
 }
