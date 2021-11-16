@@ -12,6 +12,10 @@
     "build:createFolder": "rm -r ./build; mkdir -p ./build/logo",
     "build:copySource": "cp -R ./src ./build; cp ./manifest.json ./build",
     "build:copyLogos": "cp ./logo/logo-*.png ./build/logo",
-    "build:compress": "zip -r ./build.zip ./build"
+    "build:compress": "zip -r ./build.zip ./build",
+    "format": "prettier --write './src/**/*.js'"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }
