@@ -8,25 +8,29 @@ NOTION_DOCUMENT_MUTATION.observe(document, {childList: true, subtree: true})
 const NOTION_PAGE_CONTENT_MUTATION = new MutationObserver(() => alignPageContentToRight())
 
 // Used for detecting if the Notion page is loaded
-const ROOT_LEVEL_CLASS_NAMES = ['notion-page-content', 'notion-table-view', 'notion-board-view', 'notion-gallery-view']
+const ROOT_LEVEL_CLASS_NAMES = ["notion-page-content", "notion-table-view", "notion-board-view", "notion-gallery-view"]
 
 function alignListItemsToRight() {
   const items = getListItems()
 
   items.forEach((item) => {
-    item.style['text-align'] = 'start'
+    item.style["text-align"] = "start"
   })
 }
 
 function getListItems() {
-  return document.querySelectorAll("div[placeholder='List'], div[placeholder='To-do']")
+  return document.querySelectorAll(
+    `div[placeholder="List"],
+    div[placeholder = "To-do"],
+    div[placeholder = "Toggle"]`
+  )
 }
 
 function setBlocksDirectionToAuto() {
   const blocks = getTopLevelBlocksWithoutDirAttribute()
 
   blocks.forEach((block) => {
-    block.setAttribute('dir', 'auto')
+    block.setAttribute("dir", "auto")
   })
 }
 
@@ -55,7 +59,7 @@ function onNotionDocumentLoaded(mutationsList) {
 }
 
 function getNotionPageElem(node) {
-  if (typeof node !== 'object') return null
+  if (typeof node !== "object") return null
   if (!(node instanceof HTMLElement)) return null
 
   for (const rootLevelClassName of ROOT_LEVEL_CLASS_NAMES) {
@@ -72,7 +76,7 @@ function getNotionPageElem(node) {
 function idleAlginItemsToRight() {
   for (const mutation of MUTATIONS_QUEUE) {
     for (const {addedNodes} of mutation) {
-      if (typeof addedNodes[0] !== 'undefined') {
+      if (typeof addedNodes[0] !== "undefined") {
         const $notionPageElem = getNotionPageElem(addedNodes[0])
 
         if ($notionPageElem) {
