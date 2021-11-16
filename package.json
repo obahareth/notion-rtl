@@ -1,6 +1,6 @@
 {
   "name": "notion-rtl",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "An extension to add RTL support for https://notion.so",
   "main": "index.js",
   "repository": "https://github.com/obahareth/notion-rtl.git",

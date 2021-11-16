@@ -1,6 +1,6 @@
 {
   "name": "Notion RTL",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "An extension to add RTL support for https://notion.so",
   "manifest_version": 2,
   "permissions": ["*://*.notion.so/*", "*://*.notion.site/*"],
