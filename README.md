@@ -8,6 +8,8 @@
 
 ![](.github/screenshots/main.png)
 
+⚠️ Currently [not working](https://github.com/obahareth/notion-rtl/issues/28) due to a new security feature introduced in Notion. A fix is being investigated.
+
 A browser extension to enable RTL support in https://notion.so
 
 ## Desktop App Support
