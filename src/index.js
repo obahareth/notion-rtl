@@ -12,8 +12,8 @@ const ROOT_LEVEL_CLASS_NAMES = ["notion-page-content", "notion-table-view", "not
 
 function alignListItemsToRight() {
   const items = getListItems()
-  
-  if (!itesm.length) return null;
+
+  if (!items.length) return null;
 
   items.forEach((item) => {
     item.style["text-align"] = "start"
