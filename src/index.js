@@ -12,6 +12,8 @@ const ROOT_LEVEL_CLASS_NAMES = ["notion-page-content", "notion-table-view", "not
 
 function alignListItemsToRight() {
   const items = getListItems()
+  
+  if (!itesm.length) return null;
 
   items.forEach((item) => {
     item.style["text-align"] = "start"
@@ -28,6 +30,8 @@ function getListItems() {
 
 function setBlocksDirectionToAuto() {
   const blocks = getTopLevelBlocksWithoutDirAttribute()
+
+  if (!blocks.length) return null;
 
   blocks.forEach((block) => {
     block.setAttribute("dir", "auto")
@@ -59,20 +63,21 @@ function onNotionDocumentLoaded(mutationsList) {
 }
 
 function getNotionPageElem(node) {
-  if (typeof node !== "object") return null
+  if (typeof node !== 'object') return null
   if (!(node instanceof HTMLElement)) return null
 
+  let $notionPageElem
   for (const rootLevelClassName of ROOT_LEVEL_CLASS_NAMES) {
-    const $notionPageElem = node.getElementsByClassName(rootLevelClassName)
-    if ($notionPageElem) return $notionPageElem[0]
+    $notionPageElem = node.getElementsByClassName(rootLevelClassName)
+    
+    if ($notionPageElem) {
+      break
+    }
   }
 
-  return null
+  return $notionPageElem ? $notionPageElem[0] : null
 }
 
-// Idle observe changes on notion page then align items, reason we're doing that is we shouldn't
-// block any process for the main engine also we don't want to risk the performance when applying
-// our styles on large documents.
 function idleAlginItemsToRight() {
   for (const mutation of MUTATIONS_QUEUE) {
     for (const {addedNodes} of mutation) {
