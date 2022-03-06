@@ -1,19 +1,16 @@
 # notion-rtl
+A browser extension to enable RTL support in https://notion.so
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![Chrome](.github/icons/chrome.png "Chrome")](https://chrome.google.com/webstore/detail/notion-rtl/fflggojmgaedcocmholcdicoedgaabib)
-[![Firefox](.github/icons/firefox.png "Firefox")](https://addons.mozilla.org/en-US/firefox/addon/notion-rtl/)
+# Archived
+This project is now part of Notion Enhancer (which makes it work both in web and desktop). For instructions related to Notion Enhancer and its installation please see [here](https://notion-enhancer.github.io/).
 
-![](.github/screenshots/main.png)
+If you have any issues or requests please report them [here](https://github.com/notion-enhancer/repo/issues/new/choose).
 
-⚠️ Currently [not working](https://github.com/obahareth/notion-rtl/issues/28) due to a new security feature introduced in Notion. A fix is being investigated.
-
-A browser extension to enable RTL support in https://notion.so
-
-## Desktop App Support
-Check out [Notion Enhancer](https://github.com/dragonwocky/notion-enhancer) for more information on getting this working on the Notion desktop apps.
+The source code now exists [here](https://github.com/notion-enhancer/repo/tree/dev/right-to-left).
 
 ## Developing
 1. Go to Chrome's [extensions page](chrome://extensions)
